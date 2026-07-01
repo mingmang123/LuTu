@@ -374,7 +374,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     long refreshExpireSeconds = rememberMe ? REFRESH_TOKEN_EXPIRE_REMEMBER : REFRESH_TOKEN_EXPIRE_NORMAL;
     
     // 生成Access Token（15分钟）
-    String accessToken = jwtUtil.createToken(userId, ACCESS_TOKEN_EXPIRE * 1000);
+    String accessToken = jwtUtil.createToken(userId);
     
     // 生成Refresh Token（随机字符串）
     String refreshToken = IdUtil.fastSimpleUUID();
@@ -497,7 +497,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     long refreshExpireSeconds = rememberMe ? REFRESH_TOKEN_EXPIRE_REMEMBER : REFRESH_TOKEN_EXPIRE_NORMAL;
     
     // 生成新的Access Token
-    String newAccessToken = jwtUtil.createToken(userId, ACCESS_TOKEN_EXPIRE * 1000);
+    String newAccessToken = jwtUtil.createToken(userId);
     String newRefreshToken = IdUtil.fastSimpleUUID();
     
     long now = System.currentTimeMillis() / 1000;

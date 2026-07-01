@@ -1,9 +1,7 @@
 package com.liu.lutu.domain.emun;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 /**
  * 聊天消息事件类型
