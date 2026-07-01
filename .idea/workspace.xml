@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0285a76e-cd9e-4034-92f3-55c0065f901b" name="更改" comment="1.0" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="else" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mingmang123"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:/mingmang123/LuTu.git",
+    "accountId": "ae5de71f-2644-4a99-ab76-4356bb4069dc"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+        <option name="userSettingsFile" value="E:\apache-maven-3.9.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3BnB6OaOOqrult6phKIvctU6ear" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.ChatAiTest.testChat.executor": "Run",
+    "JUnit.EmailUtilIntegrationTest.sendEmail_RealServer.executor": "Run",
+    "JUnit.EmailUtilTest.sendEmail_Real.executor": "Run",
+    "JUnit.EmailUtilTest.sendEmail_Success.executor": "Run",
+    "JUnit.EmailUtilTest.sendEmail_WithMockSender.executor": "Run",
+    "JUnit.aitest.test.executor": "Run",
+    "Maven.LuTu [clean].executor": "Run",
+    "Maven.LuTu [compile].executor": "Run",
+    "Maven.LuTu [package].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.LuTuApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/ideaproject/LuTu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.35632184",
+    "settings.editor.selected.configurable": "vcs.Subversion.SSH",
+    "ts.external.directory.path": "E:\\IntelliJ IDEA 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.liu.lutu.service.impl" />
+      <recent name="com.liu.lutu.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ideaproject\LuTu\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ideaproject\LuTu\src\main\resources\config" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.liu.lutu.util" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.LuTuApplication">
+    <configuration name="ChatAiTest.testChat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LuTu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liu.lutu.ai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.liu.lutu.ai" />
+      <option name="MAIN_CLASS_NAME" value="com.liu.lutu.ai.ChatAiTest" />
+      <option name="METHOD_NAME" value="testChat" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailUtilIntegrationTest.sendEmail_RealServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LuTu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liu.lutu.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.liu.lutu.util" />
+      <option name="MAIN_CLASS_NAME" value="com.liu.lutu.util.EmailUtilIntegrationTest" />
+      <option name="METHOD_NAME" value="sendEmail_RealServer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailUtilTest.sendEmail_Real" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LuTu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liu.lutu.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.liu.lutu.util" />
+      <option name="MAIN_CLASS_NAME" value="com.liu.lutu.util.EmailUtilTest" />
+      <option name="METHOD_NAME" value="sendEmail_Real" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailUtilTest.sendEmail_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LuTu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liu.lutu.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.liu.lutu.util" />
+      <option name="MAIN_CLASS_NAME" value="com.liu.lutu.util.EmailUtilTest" />
+      <option name="METHOD_NAME" value="sendEmail_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="aitest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LuTu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.liu.lutu.ai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.liu.lutu.ai" />
+      <option name="MAIN_CLASS_NAME" value="com.liu.lutu.ai.aitest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LuTuApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="LuTu" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.liu.lutu.LuTuApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.aitest.test" />
+        <item itemvalue="JUnit.ChatAiTest.testChat" />
+        <item itemvalue="JUnit.EmailUtilIntegrationTest.sendEmail_RealServer" />
+        <item itemvalue="JUnit.EmailUtilTest.sendEmail_Success" />
+        <item itemvalue="JUnit.EmailUtilTest.sendEmail_Real" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\28740\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="0285a76e-cd9e-4034-92f3-55c0065f901b" name="更改" comment="" />
+      <created>1775114777938</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775114777938</updated>
+      <workItem from="1775114779111" duration="478000" />
+      <workItem from="1775115320154" duration="492000" />
+      <workItem from="1775115942355" duration="10883000" />
+      <workItem from="1775127923587" duration="37000" />
+      <workItem from="1775127992846" duration="2817000" />
+      <workItem from="1775130860778" duration="4263000" />
+      <workItem from="1775201594777" duration="251000" />
+      <workItem from="1775201921225" duration="17820000" />
+      <workItem from="1775222221219" duration="5599000" />
+      <workItem from="1775284865990" duration="750000" />
+      <workItem from="1775285707810" duration="11343000" />
+      <workItem from="1775382814800" duration="4257000" />
+      <workItem from="1775387157295" duration="1608000" />
+      <workItem from="1775389618517" duration="12465000" />
+      <workItem from="1775454281936" duration="13495000" />
+      <workItem from="1775547042891" duration="1310000" />
+      <workItem from="1775557907426" duration="8902000" />
+      <workItem from="1775567179162" duration="4319000" />
+      <workItem from="1775573878702" duration="94000" />
+      <workItem from="1775574753170" duration="1710000" />
+      <workItem from="1775626932285" duration="2381000" />
+      <workItem from="1775629683799" duration="1803000" />
+      <workItem from="1775714226736" duration="13404000" />
+      <workItem from="1775731761139" duration="38000" />
+      <workItem from="1775732425088" duration="443000" />
+      <workItem from="1775894966929" duration="644000" />
+      <workItem from="1775978117460" duration="4007000" />
+      <workItem from="1775982863461" duration="3349000" />
+      <workItem from="1776047389961" duration="3639000" />
+      <workItem from="1776079233049" duration="2092000" />
+      <workItem from="1776144405854" duration="618000" />
+      <workItem from="1776332346425" duration="1296000" />
+      <workItem from="1776333711817" duration="13000" />
+      <workItem from="1776333728648" duration="39000" />
+      <workItem from="1776333787661" duration="16000" />
+      <workItem from="1776333838063" duration="71000" />
+      <workItem from="1776333919441" duration="30000" />
+      <workItem from="1776333961606" duration="55000" />
+      <workItem from="1776334059301" duration="66000" />
+      <workItem from="1776334137875" duration="37000" />
+      <workItem from="1776334278467" duration="98000" />
+      <workItem from="1776334395354" duration="39000" />
+      <workItem from="1776334444713" duration="170000" />
+      <workItem from="1776334637493" duration="4000" />
+      <workItem from="1776334659030" duration="70000" />
+      <workItem from="1776334743248" duration="3511000" />
+      <workItem from="1776477462357" duration="5262000" />
+      <workItem from="1776492963476" duration="9289000" />
+      <workItem from="1776585965900" duration="5097000" />
+      <workItem from="1776650227319" duration="32000" />
+      <workItem from="1776754031808" duration="7000" />
+      <workItem from="1776761759425" duration="6163000" />
+      <workItem from="1776770488846" duration="4614000" />
+      <workItem from="1776922563099" duration="938000" />
+      <workItem from="1776927802666" duration="18056000" />
+      <workItem from="1776946387334" duration="71000" />
+      <workItem from="1776947239872" duration="1949000" />
+      <workItem from="1776949258650" duration="10362000" />
+      <workItem from="1777008881189" duration="2668000" />
+      <workItem from="1777028731591" duration="13055000" />
+      <workItem from="1777188706184" duration="129000" />
+      <workItem from="1777192920583" duration="90000" />
+      <workItem from="1777193928416" duration="32000" />
+      <workItem from="1777538084079" duration="1481000" />
+      <workItem from="1777614978777" duration="5589000" />
+      <workItem from="1780043926004" duration="4787000" />
+      <workItem from="1780139184921" duration="65000" />
+      <workItem from="1780300967422" duration="2003000" />
+      <workItem from="1780878336208" duration="3611000" />
+      <workItem from="1781090569996" duration="9000" />
+      <workItem from="1782718389503" duration="849000" />
+      <workItem from="1782897384536" duration="1684000" />
+      <workItem from="1782899101626" duration="67000" />
+      <workItem from="1782899173886" duration="201000" />
+      <workItem from="1782899386909" duration="100000" />
+      <workItem from="1782899497012" duration="2035000" />
+    </task>
+    <task id="LOCAL-00001" summary="流式springai">
+      <option name="closed" value="true" />
+      <created>1775457284410</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1775457284410</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ai调用bug修复">
+      <option name="closed" value="true" />
+      <created>1775558460480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1775558460480</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1.0">
+      <option name="closed" value="true" />
+      <created>1776079322412</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776079322412</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1.0">
+      <option name="closed" value="true" />
+      <created>1776333307195</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776333307195</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1.0">
+      <option name="closed" value="true" />
+      <created>1782899778577</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1782899778577</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="流式springai" />
+    <MESSAGE value="ai调用bug修复" />
+    <MESSAGE value="1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0" />
+  </component>
+</project>

@@ -1,0 +1,80 @@
+server:
+  port: 8080
+spring:
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+#  profiles:
+#    active: dev
+  config:
+    import: classpath:application-config.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.database}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: ${mysql.username}
+    password: ${mysql.password}
+  data:
+    redis:
+      host: ${redis.host}
+      port: ${redis.port}
+      password: ${redis.password}
+      database: ${redis.database}
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: ${redis.max-active}
+          max-idle: ${redis.max-idle}
+          min-idle: ${redis.min-idle}
+          max-wait: ${redis.max-wait}
+
+    email:
+      host: ${email.host}
+      port: ${email.port}
+      username: ${email.username}
+      password: ${email.password}
+      nickname: ${email.nickname}
+      protocol: smtps
+      # 默认的邮件编码为UTF-8
+      default-encoding: UTF-8
+      properties:
+        mail:
+          smtp:
+            auth: true # 开启认证
+            ssl:
+              enable: true # 启用SSL加密
+            starttls:
+              enable: true
+              required: true
+
+  ai:
+    openai:
+      base-url: ${ai.openapi.base-url}
+      api-key: ${ai.openapi.api-key}
+      chat:
+        options:
+          model: ${ai.openapi.chat.options.model}
+
+sa-token:
+  # token名称
+  token-name: Authorization
+  # token有效期(30天)
+  timeout: 2592000
+  # 是否打印日志
+  is-log: true
+  # token前缀
+  token-prefix: Bearer
+  # JWT密钥
+  jwt-secret-key: ${jwt.key}
+
+logging:
+  level:
+    root: INFO
+    com.liu.lutu.tools.TravePlanTool: DEBUG
+    com.liu.lutu.service.impl.AiChatServiceImpl: DEBUG
+    com.liu.lutu.service.impl.TravelPlanItemServiceImpl: DEBUG
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: ERROR
