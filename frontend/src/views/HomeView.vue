@@ -180,7 +180,6 @@
           <span>暂无目的地数据</span>
         </div>
         <div v-else
-             <div
              class="destinations-grid">
           <div v-for="(dest, index) in destinations"
                :key="dest.id"
