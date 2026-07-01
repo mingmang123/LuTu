@@ -97,8 +97,9 @@
           <div class="feature-row"
                :style="{ animationDelay: '0.1s' }">
             <div class="feature-image-wrap">
-              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop"
-                   alt="AI智慧规划" />
+              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop&q=60"
+                   alt="AI智慧规划"
+                   loading="lazy" />
             </div>
             <div class="feature-text">
               <div class="feature-tags">
@@ -117,8 +118,9 @@
           <div class="feature-row reverse"
                :style="{ animationDelay: '0.2s' }">
             <div class="feature-image-wrap">
-              <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop"
-                   alt="风景路线" />
+              <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop&q=60"
+                   alt="风景路线"
+                   loading="lazy" />
             </div>
             <div class="feature-text">
               <div class="feature-tags">
@@ -137,8 +139,9 @@
           <div class="feature-row"
                :style="{ animationDelay: '0.3s' }">
             <div class="feature-image-wrap">
-              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop"
-                   alt="预算管理" />
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop&q=60"
+                   alt="预算管理"
+                   loading="lazy" />
             </div>
             <div class="feature-text">
               <div class="feature-tags">
@@ -185,7 +188,8 @@
                :style="{ animationDelay: `${index * 0.1}s` }">
             <div class="destination-cover">
               <img :src="dest.imageUrl || getDefaultDestinationImage(dest.name)"
-                   :alt="dest.name" />
+                   :alt="dest.name"
+                   loading="lazy" />
               <div class="destination-overlay"></div>
               <span class="destination-tag">{{ getDestinationTag(dest.tags) }}</span>
             </div>
@@ -219,7 +223,8 @@
                :style="{ animationDelay: `${index * 0.1}s` }">
             <div class="season-image">
               <img :src="dest.imageUrl || getDefaultDestinationImage(dest.name)"
-                   :alt="dest.name" />
+                   :alt="dest.name"
+                   loading="lazy" />
               <div class="season-overlay"></div>
             </div>
             <div class="season-content">
@@ -255,7 +260,8 @@
                @click="viewShare(share)">
             <div class="share-cover">
               <img :src="share.coverImage || getDefaultCover(share)"
-                   :alt="share.title" />
+                   :alt="share.title"
+                   loading="lazy" />
             </div>
             <div class="share-content">
               <h3 class="share-title">{{ share.title }}</h3>
@@ -494,9 +500,9 @@ const viewShare = (share) => {
 
 const getDefaultCover = (share) => {
   const covers = [
-    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600',
-    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600'
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=60',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=60',
+    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=60'
   ]
   return covers[share.id % covers.length]
 }
@@ -584,22 +590,22 @@ const formatStatNumber = (num) => {
 // 获取目的地默认图片
 const getDefaultDestinationImage = (name) => {
   const images = {
-    '丽江': 'https://images.unsplash.com/photo-1527684651001-731c474bbb5a?w=600',
-    '京都': 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600',
-    '普吉': 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=600',
-    '九寨沟': 'https://images.unsplash.com/photo-1564602990062-348691861a10?w=600',
-    '北京': 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600',
-    '上海': 'https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=600',
-    '杭州': 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?w=600',
-    '成都': 'https://images.unsplash.com/photo-1565104425087-ecaa11baf556?w=600',
-    '西安': 'https://images.unsplash.com/photo-1598319964969-4336e4f6d1f9?w=600',
-    '厦门': 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=600',
-    '三亚': 'https://images.unsplash.com/photo-1540202404-a6711df91000?w=600'
+    '丽江': 'https://images.unsplash.com/photo-1527684651001-731c474bbb5a?w=400&q=60',
+    '京都': 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&q=60',
+    '普吉': 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400&q=60',
+    '九寨沟': 'https://images.unsplash.com/photo-1564602990062-348691861a10?w=400&q=60',
+    '北京': 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=60',
+    '上海': 'https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=400&q=60',
+    '杭州': 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?w=400&q=60',
+    '成都': 'https://images.unsplash.com/photo-1565104425087-ecaa11baf556?w=400&q=60',
+    '西安': 'https://images.unsplash.com/photo-1598319964969-4336e4f6d1f9?w=400&q=60',
+    '厦门': 'https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=400&q=60',
+    '三亚': 'https://images.unsplash.com/photo-1540202404-a6711df91000?w=400&q=60'
   }
   for (const key in images) {
     if (name && name.includes(key)) return images[key]
   }
-  return 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600'
+  return 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=60'
 }
 
 // 获取目的地标签
@@ -761,7 +767,7 @@ const goToShareList = () => {
 .hero-image {
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920")
+  background: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=70")
     center/cover;
 }
 
@@ -866,6 +872,8 @@ const goToShareList = () => {
 .destinations-section,
 .shares-section {
   padding: 120px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
 }
 
 .features {
@@ -1267,6 +1275,8 @@ const goToShareList = () => {
   padding: 60px 0 30px;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
+  content-visibility: auto;
+  contain-intrinsic-size: 200px;
 }
 
 /* 加载和空状态 */
@@ -1286,6 +1296,8 @@ const goToShareList = () => {
     var(--bg-secondary) 0%,
     var(--bg-primary) 100%
   );
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
 }
 
 .season-grid {
@@ -1695,7 +1707,7 @@ const goToShareList = () => {
 /* 功能特色 - 山脉背景 */
 .features {
   background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=60")
       center/cover no-repeat fixed;
 }
 
@@ -1720,14 +1732,14 @@ const goToShareList = () => {
       rgba(255, 255, 255, 0.92),
       rgba(255, 255, 255, 0.96)
     ),
-    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=60")
       center/cover no-repeat fixed;
 }
 
 /* 季节推荐 - 森林背景 */
 .season-section {
   background: linear-gradient(rgba(20, 83, 45, 0.8), rgba(20, 83, 45, 0.88)),
-    url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=60")
       center/cover no-repeat fixed;
 }
 
@@ -1744,7 +1756,7 @@ const goToShareList = () => {
 /* 旅行分享 - 城市夜景背景 */
 .shares-section {
   background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92)),
-    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&q=60")
       center/cover no-repeat fixed;
 }
 
@@ -1756,7 +1768,7 @@ const goToShareList = () => {
 /* 页脚 - 星空背景 */
 .footer {
   background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.96)),
-    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=60")
       center/cover no-repeat;
   color: white;
 }
@@ -1772,13 +1784,13 @@ const goToShareList = () => {
 /* 导航栏背景 - 星空图片 */
 .navbar {
   background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)),
-    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=60")
       center/cover no-repeat;
 }
 
 .navbar-scrolled {
   background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)),
-    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80")
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=60")
       center/cover no-repeat;
   backdrop-filter: blur(10px);
 }

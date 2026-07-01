@@ -1,5 +1,6 @@
 package com.liu.lutu.controller;
 
+import cn.hutool.json.JSONUtil;
 import com.liu.lutu.domain.po.Destination;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelGuide;
@@ -8,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +19,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -38,6 +41,10 @@ public class HomeController {
   private final ITravelPlanService travelPlanService;
   private final IUserService userService;
   private final ITravelPlanShareService travelPlanShareService;
+  private final StringRedisTemplate redisTemplate;
+
+  private static final String STATS_CACHE_KEY = "home:stats";
+  private static final long STATS_CACHE_TTL = 5;
 
   /**
    * 获取首页所有数据
@@ -145,6 +152,15 @@ public class HomeController {
   @GetMapping("/statistics")
   @Operation(summary = "统计数据", description = "获取首页统计数据")
   public Result<Map<String, Object>> getStatistics() {
+    // 尝试从缓存获取
+    String cached = redisTemplate.opsForValue().get(STATS_CACHE_KEY);
+    if (cached != null) {
+      log.debug("从缓存获取统计数据");
+      @SuppressWarnings("unchecked")
+      Map<String, Object> cachedStats = JSONUtil.toBean(cached, Map.class);
+      return Result.success(cachedStats);
+    }
+
     Map<String, Object> stats = new HashMap<>();
 
     // 旅行计划数量
@@ -158,6 +174,9 @@ public class HomeController {
     // 分享数量
     long shareCount = travelPlanShareService.count();
     stats.put("shares", shareCount);
+
+    // 缓存结果（5分钟TTL，统计数据不需要实时精确）
+    redisTemplate.opsForValue().set(STATS_CACHE_KEY, JSONUtil.toJsonStr(stats), STATS_CACHE_TTL, TimeUnit.MINUTES);
 
     return Result.success(stats);
   }

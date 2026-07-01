@@ -1,5 +1,6 @@
 package com.liu.lutu.service.impl;
 
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.po.Destination;
@@ -11,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +44,8 @@ public class DestinationServiceImpl extends ServiceImpl<DestinationMapper, Desti
     String cached = redisTemplate.opsForValue().get(cacheKey);
     if (cached != null) {
       log.debug("从缓存获取热门目的地");
-      // 简化处理，实际应该序列化/反序列化
+      List<Destination> cachedList = JSONUtil.toList(cached, Destination.class);
+      return Result.success(cachedList);
     }
 
     LambdaQueryWrapper<Destination> wrapper = new LambdaQueryWrapper<>();
@@ -61,8 +62,8 @@ public class DestinationServiceImpl extends ServiceImpl<DestinationMapper, Desti
         .limit(limit)
         .collect(Collectors.toList());
 
-    // 缓存结果
-    redisTemplate.opsForValue().set(cacheKey, LocalDateTime.now().toString(), CACHE_TTL, TimeUnit.MINUTES);
+    // 缓存结果（序列化为 JSON）
+    redisTemplate.opsForValue().set(cacheKey, JSONUtil.toJsonStr(list), CACHE_TTL, TimeUnit.MINUTES);
 
     return Result.success(list);
   }
@@ -71,12 +72,24 @@ public class DestinationServiceImpl extends ServiceImpl<DestinationMapper, Desti
   public Result<List<Destination>> getDestinationsBySeason(String season) {
     String cacheKey = CACHE_KEY_PREFIX + "season:" + season;
 
+    // 尝试从缓存获取
+    String cached = redisTemplate.opsForValue().get(cacheKey);
+    if (cached != null) {
+      log.debug("从缓存获取季节推荐目的地");
+      List<Destination> cachedList = JSONUtil.toList(cached, Destination.class);
+      return Result.success(cachedList);
+    }
+
     LambdaQueryWrapper<Destination> wrapper = new LambdaQueryWrapper<>();
     wrapper.eq(Destination::getStatus, 1)
         .like(Destination::getBestSeason, season)
         .orderByAsc(Destination::getSortOrder);
 
     List<Destination> list = destinationMapper.selectList(wrapper);
+
+    // 缓存结果（序列化为 JSON，季节数据 TTL 加长到 1 小时）
+    redisTemplate.opsForValue().set(cacheKey, JSONUtil.toJsonStr(list), 1, TimeUnit.HOURS);
+
     return Result.success(list);
   }
 

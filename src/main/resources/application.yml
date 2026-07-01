@@ -4,8 +4,8 @@ spring:
   jackson:
     time-zone: Asia/Shanghai
     date-format: yyyy-MM-dd HH:mm:ss
-#  profiles:
-#    active: dev
+  profiles:
+    active: dev
   config:
     import: classpath:application-config.yml
   datasource:

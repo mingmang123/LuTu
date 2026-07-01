@@ -1,6 +1,7 @@
 /src/main/resources/application-config.yml
 /src/main/resources/application-config-dev.yml
+/target/
 /人工智能系本科毕业论文（设计）撰写规范.txt
 /毕业论文-基于AI大模型的智能旅行规划系统的设计与实现.md
 /src/test/java/com/liu/lutu/
-/.gitignore
+/nginx-1.26.3/logs/

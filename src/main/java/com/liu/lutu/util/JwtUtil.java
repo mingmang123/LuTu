@@ -31,16 +31,21 @@ public class JwtUtil {
 
     //解析token
     public Long parseToken(String token) {
-        JWT jwt = JWTUtil.parseToken(token);
-        // 设置密钥
-        jwt.setKey(secret.getBytes());
-        // 验证签名和过期时间
-        if (!jwt.verify() || !jwt.validate(0)) {
+        try {
+            JWT jwt = JWTUtil.parseToken(token);
+            // 设置密钥
+            jwt.setKey(secret.getBytes());
+            // 验证签名和过期时间
+            if (!jwt.verify() || !jwt.validate(0)) {
+                return null;
+            }
+            // 获取用户id
+            String userId = jwt.getPayload("userId").toString();
+            return Long.valueOf(userId);
+        } catch (Exception e) {
+            // Token 格式不正确（不是合法 JWT）或解析异常
             return null;
         }
-        // 获取用户id
-        String userId = jwt.getPayload("userId").toString();
-        return Long.valueOf(userId);
     }
 
 }

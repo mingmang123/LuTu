@@ -23,10 +23,7 @@ import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -414,6 +411,17 @@ public class TravelPlanShareServiceImpl extends ServiceImpl<TravelPlanShareMappe
 
     Page<TravelPlanShare> result = page(pageParam, wrapper);
 
+    // 批量查询所有作者信息，避免 N+1 查询
+    Set<Long> userIds = result.getRecords().stream()
+        .map(TravelPlanShare::getUserId)
+        .collect(Collectors.toSet());
+    Map<Long, User> userMap = Collections.emptyMap();
+    if (!userIds.isEmpty()) {
+      List<User> users = userMapper.selectBatchIds(userIds);
+      userMap = users.stream().collect(Collectors.toMap(User::getId, u -> u, (a, b) -> a));
+    }
+    final Map<Long, User> finalUserMap = userMap;
+
     List<ShareDetailVO> list = result.getRecords().stream().map(share -> {
       ShareDetailVO detail = new ShareDetailVO();
       detail.setId(share.getId());
@@ -426,8 +434,8 @@ public class TravelPlanShareServiceImpl extends ServiceImpl<TravelPlanShareMappe
       detail.setLikeCount(getLikeCount(share.getShareCode()));
       detail.setCreateTime(share.getCreateTime());
 
-      // 作者信息
-      User author = userMapper.selectById(share.getUserId());
+      // 从批量查询的缓存中获取作者信息
+      User author = finalUserMap.get(share.getUserId());
       ShareDetailVO.AuthorInfo authorInfo = new ShareDetailVO.AuthorInfo();
       authorInfo.setId(author != null ? author.getId() : null);
       authorInfo.setUsername(author != null ? author.getUsername() : "匿名用户");

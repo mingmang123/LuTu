@@ -134,7 +134,7 @@ jwt:
 CREATE DATABASE IF NOT EXISTS lutu DEFAULT CHARSET utf8mb4;
 ```
 
-启动应用后 MyBatis-Plus 会自动建表（如已配置自动 DDL）。或者导入 `db/` 目录下的 SQL 脚本。
+导入 LuTu.sql 这个SQL 脚本。
 
 ### 3. 启动后端
 
@@ -235,3 +235,7 @@ nginx
 4. **Nginx SSE**：部署时需配置 `proxy_buffering off`，否则 SSE 会卡住
 5. **限流**：`@RateLimit` 基于本地 Guava 令牌桶，多实例部署需改为分布式限流
 6. **CORS**：当前允许所有来源，生产环境需收窄
+
+## 📄 License
+
+MIT

@@ -268,6 +268,11 @@ const handleLogin = async () => {
   error.value = ''
   success.value = ''
 
+  // 登录前清除旧 token，防止残留的无效 token 干扰
+  userStore.clearUser()
+  localStorage.removeItem('token')
+  localStorage.removeItem('refreshToken')
+
   const email = form.value.email
 
   if (!email) {
@@ -308,10 +313,14 @@ const handleLogin = async () => {
     }
 
     if (res.code === 200) {
-      // 先设置 token 到 store 和 localStorage
-      userStore.setToken(res.data)
-      // 确保 token 已写入 localStorage
-      localStorage.setItem('token', res.data)
+      // 存储 Access Token（JWT）到 store 和 localStorage
+      const tokenData = res.data
+      userStore.setToken(tokenData.accessToken || tokenData)
+      localStorage.setItem('token', tokenData.accessToken || tokenData)
+      // 存储 Refresh Token 到 localStorage（供刷新时使用）
+      if (tokenData.refreshToken) {
+        localStorage.setItem('refreshToken', tokenData.refreshToken)
+      }
       success.value = '登录成功，正在跳转...'
       // 获取用户信息
       await fetchUserInfo()
