@@ -1,5 +1,6 @@
 package com.liu.lutu.service.impl;
 
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.po.Result;
@@ -36,17 +37,25 @@ public class TravelGuideServiceImpl extends ServiceImpl<TravelGuideMapper, Trave
     @Override
     public Result<List<TravelGuide>> getRecommendedGuides(Integer limit) {
         String cacheKey = CACHE_KEY_PREFIX + "rec:" + limit;
-        
+
+        // 尝试从缓存获取
+        String cached = redisTemplate.opsForValue().get(cacheKey);
+        if (cached != null) {
+            log.debug("从缓存获取推荐攻略");
+            List<TravelGuide> cachedList = JSONUtil.toList(cached, TravelGuide.class);
+            return Result.success(cachedList);
+        }
+
         LambdaQueryWrapper<TravelGuide> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(TravelGuide::getStatus, 1)
                 .orderByAsc(TravelGuide::getSortOrder)
                 .last("LIMIT " + limit);
-        
+
         List<TravelGuide> list = travelGuideMapper.selectList(wrapper);
-        
-        // 缓存结果
-        redisTemplate.opsForValue().set(cacheKey, String.valueOf(System.currentTimeMillis()), CACHE_TTL, TimeUnit.MINUTES);
-        
+
+        // 缓存结果（序列化为 JSON）
+        redisTemplate.opsForValue().set(cacheKey, JSONUtil.toJsonStr(list), CACHE_TTL, TimeUnit.MINUTES);
+
         return Result.success(list);
     }
 

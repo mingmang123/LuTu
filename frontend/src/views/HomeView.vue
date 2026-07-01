@@ -311,7 +311,7 @@ import {computed, onMounted, onUnmounted, ref} from 'vue'
 import {useRouter} from 'vue-router'
 import {useUserStore} from '@/stores/user'
 import {getHotShares, getLatestShares} from '@/api/share'
-import {getHomeData, getStatistics} from '@/api/home'
+import {getHomeData} from '@/api/home'
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -345,8 +345,7 @@ onMounted(() => {
     isPageLoaded.value = true
   }, 100)
 
-  loadHomeData()
-  loadStatistics()
+  loadHomeData()  // 合并了统计数据，一次请求获取全部内容
   loadShares()
 
   // 监听滚动
@@ -433,7 +432,7 @@ const animateNumbers = () => {
   }, interval)
 }
 
-// 加载首页数据
+// 加载首页数据（含统计数据，一次请求替代原来的两次）
 const loadHomeData = async () => {
   homeLoading.value = true
   try {
@@ -442,23 +441,15 @@ const loadHomeData = async () => {
       destinations.value = res.data.hotDestinations || []
       seasonDestinations.value = res.data.seasonDestinations || []
       currentSeason.value = res.data.currentSeason || ''
+      // 统计数据已合入此接口
+      if (res.data.stats) {
+        stats.value = res.data.stats
+      }
     }
   } catch (error) {
     console.error('加载首页数据失败:', error)
   } finally {
     homeLoading.value = false
-  }
-}
-
-// 加载统计数据
-const loadStatistics = async () => {
-  try {
-    const res = await getStatistics()
-    if (res.code === 200) {
-      stats.value = res.data
-    }
-  } catch (error) {
-    console.error('加载统计数据失败:', error)
   }
 }
 
@@ -1708,7 +1699,7 @@ const goToShareList = () => {
 .features {
   background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
     url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=60")
-      center/cover no-repeat fixed;
+      center/cover no-repeat;
 }
 
 .features .section-title,
@@ -1733,14 +1724,14 @@ const goToShareList = () => {
       rgba(255, 255, 255, 0.96)
     ),
     url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=60")
-      center/cover no-repeat fixed;
+      center/cover no-repeat;
 }
 
 /* 季节推荐 - 森林背景 */
 .season-section {
   background: linear-gradient(rgba(20, 83, 45, 0.8), rgba(20, 83, 45, 0.88)),
     url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=60")
-      center/cover no-repeat fixed;
+      center/cover no-repeat;
 }
 
 .season-section .section-title,
@@ -1757,7 +1748,7 @@ const goToShareList = () => {
 .shares-section {
   background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92)),
     url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&q=60")
-      center/cover no-repeat fixed;
+      center/cover no-repeat;
 }
 
 .shares-section .section-title,

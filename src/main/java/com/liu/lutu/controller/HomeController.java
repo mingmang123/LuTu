@@ -52,15 +52,15 @@ public class HomeController {
    * @return 首页数据
    */
   @GetMapping("/data")
-  @Operation(summary = "获取首页数据", description = "获取首页所有展示数据")
+  @Operation(summary = "获取首页数据", description = "获取首页所有展示数据（含统计数据）")
   public Result<Map<String, Object>> getHomeData() {
     Map<String, Object> data = new HashMap<>();
 
-    // 热门目的地
+    // 热门目的地（Redis缓存）
     Result<List<Destination>> hotDestinations = destinationService.getHotDestinations(4);
     data.put("hotDestinations", hotDestinations.getData());
 
-    // 推荐攻略
+    // 推荐攻略（Redis缓存）
     Result<List<TravelGuide>> recommendedGuides = travelGuideService.getRecommendedGuides(4);
     data.put("recommendedGuides", recommendedGuides.getData());
 
@@ -68,11 +68,34 @@ public class HomeController {
     String currentSeason = getCurrentSeason();
     data.put("currentSeason", currentSeason);
 
-    // 季节推荐
+    // 季节推荐（Redis缓存）
     Result<List<Destination>> seasonDestinations = destinationService.getDestinationsBySeason(currentSeason);
     data.put("seasonDestinations", seasonDestinations.getData());
 
+    // 统计数据（Redis缓存，合入此接口减少一次HTTP请求）
+    data.put("stats", getStatsData());
+
     return Result.success(data);
+  }
+
+  /**
+   * 获取统计数据（内部方法，供聚合接口复用）
+   */
+  private Map<String, Object> getStatsData() {
+    String cached = redisTemplate.opsForValue().get(STATS_CACHE_KEY);
+    if (cached != null) {
+      @SuppressWarnings("unchecked")
+      Map<String, Object> cachedStats = JSONUtil.toBean(cached, Map.class);
+      return cachedStats;
+    }
+
+    Map<String, Object> stats = new HashMap<>();
+    stats.put("plans", travelPlanService.count());
+    stats.put("users", userService.count());
+    stats.put("shares", travelPlanShareService.count());
+
+    redisTemplate.opsForValue().set(STATS_CACHE_KEY, JSONUtil.toJsonStr(stats), STATS_CACHE_TTL, TimeUnit.MINUTES);
+    return stats;
   }
 
   /**
@@ -146,7 +169,7 @@ public class HomeController {
 
   /**
    * 获取统计数据
-   * 
+   *
    * @return 统计数据
    */
   @GetMapping("/statistics")
