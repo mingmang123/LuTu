@@ -22,6 +22,10 @@
   --accent-600: #ea580c;
   --accent-700: #c2410c;
 
+  /* 语义化别名（被多个组件引用） */
+  --accent-primary: #16a34a;
+  --accent-secondary: #059669;
+
   /* 背景色 */
   --bg-primary: #faf8f5;
   --bg-secondary: #f5f0e8;

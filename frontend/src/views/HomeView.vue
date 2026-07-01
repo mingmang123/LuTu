@@ -679,7 +679,8 @@ const goToShareList = () => {
 }
 
 .nav-link:hover {
-  color: var(--accent-primary);
+  color: var(
+      --accent-primary);
 }
 
 .nav-actions {
