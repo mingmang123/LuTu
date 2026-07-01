@@ -189,14 +189,14 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { useUserStore } from '@/stores/user'
+import {computed, onMounted, ref} from 'vue'
+import {useRoute, useRouter} from 'vue-router'
+import {useUserStore} from '@/stores/user'
 import AppHeader from '@/components/AppHeader.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
-import { getTravelPlans, getTravelItems } from '@/api/travel'
-import { getHomeData, getRecommendedDestinations } from '@/api/home'
-import { encodeId } from '@/utils/idEncoder'
+import {getTravelItems, getTravelPlans} from '@/api/travel'
+import {getHomeData, getRecommendedDestinations} from '@/api/home'
+import {encodeId} from '@/utils/idEncoder'
 
 const router = useRouter()
 const route = useRoute()

@@ -353,13 +353,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import { useRouter } from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
+import {useRouter} from 'vue-router'
 import ConfirmDialog from '@/components/ConfirmDialog.vue'
-import { getTravelPlans, createTravelPlan, deleteTravelPlan } from '@/api/travel'
-import { generateShareCode, updateShareStatus, queryShareStatus, createShare, updateShare } from '@/api/travelPlanShare'
-import { uploadImage } from '@/api/file'
-import { encodeId } from '@/utils/idEncoder'
+import {createTravelPlan, deleteTravelPlan, getTravelPlans} from '@/api/travel'
+import {createShare, generateShareCode, queryShareStatus, updateShare, updateShareStatus} from '@/api/travelPlanShare'
+import {uploadImage} from '@/api/file'
+import {encodeId} from '@/utils/idEncoder'
 
 const router = useRouter()
 const travelPlans = ref([])

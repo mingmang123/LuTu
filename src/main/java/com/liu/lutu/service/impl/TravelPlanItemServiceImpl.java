@@ -1,12 +1,12 @@
 package com.liu.lutu.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.emun.TravelTypeEnum;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelPlanItem;
 import com.liu.lutu.domain.vo.TravelPlanItemVo;
 import com.liu.lutu.mapper.TravelPlanItemMapper;
 import com.liu.lutu.service.ITravelPlanItemService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.util.ThreadlocalUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -18,7 +18,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**

@@ -235,11 +235,11 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { getShareDetail, likeShare, getHotShares, checkLikeStatus } from '@/api/share'
-import { useUserStore } from '@/stores/user'
-import { toggleFavorite, checkFavorite, clonePlan } from '@/api/favorite'
+import {computed, onMounted, ref} from 'vue'
+import {useRoute, useRouter} from 'vue-router'
+import {checkLikeStatus, getHotShares, getShareDetail, likeShare} from '@/api/share'
+import {useUserStore} from '@/stores/user'
+import {checkFavorite, clonePlan, toggleFavorite} from '@/api/favorite'
 import MessageToast from '@/components/MessageToast.vue'
 
 const route = useRoute()

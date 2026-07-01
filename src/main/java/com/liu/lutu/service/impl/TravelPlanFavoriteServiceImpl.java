@@ -2,6 +2,7 @@ package com.liu.lutu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.po.*;
 import com.liu.lutu.domain.vo.TravelPlanFavoriteVO;
 import com.liu.lutu.mapper.TravelPlanFavoriteMapper;
@@ -9,7 +10,6 @@ import com.liu.lutu.mapper.TravelPlanItemMapper;
 import com.liu.lutu.mapper.TravelPlanMapper;
 import com.liu.lutu.mapper.TravelPlanShareMapper;
 import com.liu.lutu.service.ITravelPlanFavoriteService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.util.ThreadlocalUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

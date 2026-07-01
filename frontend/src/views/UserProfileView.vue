@@ -256,10 +256,10 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
-import { useUserStore } from '@/stores/user'
-import { updatePassword, uploadAvatar, updateUsername } from '@/api/user'
-import { getUserPortrait, updateUserPortrait, addUserPortrait } from '@/api/userPortrait'
+import {onMounted, reactive, ref} from 'vue'
+import {useUserStore} from '@/stores/user'
+import {updatePassword, updateUsername, uploadAvatar} from '@/api/user'
+import {addUserPortrait, getUserPortrait, updateUserPortrait} from '@/api/userPortrait'
 import MessageToast from '@/components/MessageToast.vue'
 
 const userStore = useUserStore()

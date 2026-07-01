@@ -1,8 +1,8 @@
 package com.liu.lutu.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelPlanFavorite;
-import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * 行程收藏 服务类

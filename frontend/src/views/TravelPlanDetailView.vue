@@ -350,12 +350,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
+import {useRoute, useRouter} from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
 import ConfirmDialog from '@/components/ConfirmDialog.vue'
-import { getTravelPlans, getTravelItems, addTravelItem, updateTravelItem, deleteTravelItem } from '@/api/travel'
-import { decodeId } from '@/utils/idEncoder'
+import {addTravelItem, deleteTravelItem, getTravelItems, getTravelPlans, updateTravelItem} from '@/api/travel'
+import {decodeId} from '@/utils/idEncoder'
 
 const route = useRoute()
 const router = useRouter()

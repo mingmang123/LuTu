@@ -1,12 +1,10 @@
 package com.liu.lutu.controller;
 
-import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.itf.RateLimit;
+import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.service.ITravelPlanShareService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * 行程分享控制器

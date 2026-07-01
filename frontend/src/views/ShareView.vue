@@ -171,10 +171,10 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { queryByShareCode } from '@/api/travelPlanShare'
-import { useUserStore } from '@/stores/user'
+import {computed, onMounted, ref} from 'vue'
+import {useRoute, useRouter} from 'vue-router'
+import {queryByShareCode} from '@/api/travelPlanShare'
+import {useUserStore} from '@/stores/user'
 
 const route = useRoute()
 const router = useRouter()

@@ -1,12 +1,12 @@
 package com.liu.lutu.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.dto.AiChatMessageDTO;
 import com.liu.lutu.domain.po.AiChatMessage;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.vo.AiChatMessageVo;
 import com.liu.lutu.mapper.AiChatMessageMapper;
 import com.liu.lutu.service.IAiChatMessageService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.util.ThreadlocalUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

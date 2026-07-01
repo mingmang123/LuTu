@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0285a76e-cd9e-4034-92f3-55c0065f901b" name="更改" comment="1.0基础版">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liu/lutu/domain/emun/ChatEventTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liu/lutu/domain/emun/ChatEventTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liu/lutu/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liu/lutu/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +49,9 @@
         <option name="userSettingsFile" value="E:\apache-maven-3.9.9\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -314,7 +315,7 @@
       <workItem from="1782899173886" duration="201000" />
       <workItem from="1782899386909" duration="100000" />
       <workItem from="1782899497012" duration="2035000" />
-      <workItem from="1782901569790" duration="518000" />
+      <workItem from="1782901569790" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="流式springai">
       <option name="closed" value="true" />
@@ -364,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782901813284</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1.0基础版">
+      <option name="closed" value="true" />
+      <created>1782902103143</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782902103143</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

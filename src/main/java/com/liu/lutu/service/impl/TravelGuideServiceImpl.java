@@ -1,11 +1,11 @@
 package com.liu.lutu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelGuide;
 import com.liu.lutu.mapper.TravelGuideMapper;
 import com.liu.lutu.service.ITravelGuideService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;

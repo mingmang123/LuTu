@@ -1,12 +1,11 @@
 package com.liu.lutu.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelUserPortrait;
 import com.liu.lutu.domain.vo.TravelUserPortraitVo;
 import com.liu.lutu.mapper.TravelUserPortraitMapper;
 import com.liu.lutu.service.ITravelUserPortraitService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.util.ThreadlocalUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

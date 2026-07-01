@@ -125,10 +125,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import {onMounted, ref, watch} from 'vue'
+import {useRoute, useRouter} from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
-import { getHotShares, getLatestShares, searchSharesByTag } from '@/api/share'
+import {getHotShares, getLatestShares, searchSharesByTag} from '@/api/share'
 
 const router = useRouter()
 const route = useRoute()

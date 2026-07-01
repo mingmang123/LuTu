@@ -1,11 +1,11 @@
 package com.liu.lutu.memory;
 
 import cn.hutool.core.collection.CollStreamUtil;
-import cn.hutool.json.JSONUtil;
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.data.redis.core.StringRedisTemplate;
+
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;

@@ -1,7 +1,5 @@
 package com.liu.lutu.util;
 
-import com.liu.lutu.domain.po.User;
-
 public class ThreadlocalUtil {
     // 存储当前线程的用户信息
     private static final ThreadLocal<Long> USER_THREAD_LOCAL = new ThreadLocal<>();

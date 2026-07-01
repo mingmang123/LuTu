@@ -1,17 +1,14 @@
 package com.liu.lutu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.domain.dto.AiChatSessionCreateDTO;
-import com.liu.lutu.domain.emun.AiChatSessionStatusEnum;
 import com.liu.lutu.domain.po.AiChatSession;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelPlan;
 import com.liu.lutu.domain.vo.AiChatSessionVo;
 import com.liu.lutu.mapper.AiChatSessionMapper;
-import com.liu.lutu.service.AiChatservice;
-import com.liu.lutu.service.IAiChatMessageService;
 import com.liu.lutu.service.IAiChatSessionService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.util.ThreadlocalUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

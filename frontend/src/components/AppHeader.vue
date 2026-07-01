@@ -30,9 +30,9 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute } from 'vue-router'
-import { useUserStore } from '@/stores/user'
-import { computed } from 'vue'
+import {useRoute, useRouter} from 'vue-router'
+import {useUserStore} from '@/stores/user'
+import {computed} from 'vue'
 
 const router = useRouter()
 const route = useRoute()

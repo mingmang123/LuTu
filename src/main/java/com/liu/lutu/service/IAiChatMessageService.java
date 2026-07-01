@@ -1,8 +1,8 @@
 package com.liu.lutu.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.liu.lutu.domain.dto.AiChatMessageDTO;
 import com.liu.lutu.domain.po.AiChatMessage;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.vo.AiChatMessageVo;
 

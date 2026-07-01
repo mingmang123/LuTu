@@ -8,11 +8,9 @@ import com.liu.lutu.domain.po.TravelPlanItem;
 import com.liu.lutu.domain.vo.TravelPlanItemVo;
 import com.liu.lutu.mapper.AiChatSessionMapper;
 import com.liu.lutu.mapper.TravelPlanItemMapper;
-import com.liu.lutu.service.IAiChatSessionService;
 import com.liu.lutu.service.ITravelPlanItemService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.beans.BeanUtils;

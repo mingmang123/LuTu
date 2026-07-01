@@ -1,12 +1,8 @@
 package com.liu.lutu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.liu.lutu.domain.po.AiChatSession;
-import com.liu.lutu.domain.po.Result;
-import com.liu.lutu.domain.po.TravelPlan;
-import com.liu.lutu.domain.po.TravelPlanFavorite;
-import com.liu.lutu.domain.po.TravelPlanItem;
-import com.liu.lutu.domain.po.TravelPlanShare;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.liu.lutu.domain.po.*;
 import com.liu.lutu.domain.vo.TravelPlanVo;
 import com.liu.lutu.mapper.AiChatSessionMapper;
 import com.liu.lutu.mapper.TravelPlanFavoriteMapper;
@@ -14,7 +10,6 @@ import com.liu.lutu.mapper.TravelPlanMapper;
 import com.liu.lutu.mapper.TravelPlanShareMapper;
 import com.liu.lutu.service.IOssService;
 import com.liu.lutu.service.ITravelPlanService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.lutu.util.ThreadlocalUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

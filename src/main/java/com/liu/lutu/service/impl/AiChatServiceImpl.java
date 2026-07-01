@@ -1,14 +1,9 @@
 package com.liu.lutu.service.impl;
 
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.stream.StreamUtil;
-import cn.hutool.core.util.IdUtil;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.liu.lutu.domain.dto.AiChatMessageDTO;
 import com.liu.lutu.domain.emun.ChatEventTypeEnum;
 import com.liu.lutu.domain.emun.MessageTypeEnum;
-import com.liu.lutu.domain.po.AiChatSession;
 import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.TravelPlan;
 import com.liu.lutu.domain.vo.AiChatMessageVo;
@@ -24,7 +19,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor;
-import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.messages.Message;
@@ -38,6 +32,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

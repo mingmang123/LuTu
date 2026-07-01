@@ -1,7 +1,7 @@
 package com.liu.lutu.mapper;
 
-import com.liu.lutu.domain.po.TravelUserPortrait;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.liu.lutu.domain.po.TravelUserPortrait;
 
 /**
  * <p>

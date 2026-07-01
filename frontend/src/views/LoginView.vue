@@ -193,10 +193,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
-import { useUserStore } from '@/stores/user'
-import { login, getUserInfo, sendVerifyCode, captchaLogin } from '@/api/user'
+import {computed, ref} from 'vue'
+import {useRouter} from 'vue-router'
+import {useUserStore} from '@/stores/user'
+import {captchaLogin, getUserInfo, login, sendVerifyCode} from '@/api/user'
 
 const router = useRouter()
 const userStore = useUserStore()

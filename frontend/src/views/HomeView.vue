@@ -301,11 +301,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { useUserStore } from '@/stores/user'
-import { getHotShares, getLatestShares } from '@/api/share'
-import { getHomeData, getStatistics } from '@/api/home'
+import {computed, onMounted, onUnmounted, ref} from 'vue'
+import {useRouter} from 'vue-router'
+import {useUserStore} from '@/stores/user'
+import {getHotShares, getLatestShares} from '@/api/share'
+import {getHomeData, getStatistics} from '@/api/home'
 
 const router = useRouter()
 const userStore = useUserStore()

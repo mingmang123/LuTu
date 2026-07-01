@@ -118,9 +118,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
-import { addUserPortrait } from '@/api/userPortrait'
+import {computed, ref} from 'vue'
+import {useRouter} from 'vue-router'
+import {addUserPortrait} from '@/api/userPortrait'
 
 const router = useRouter()
 

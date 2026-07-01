@@ -1,7 +1,7 @@
 package com.liu.lutu.mapper;
 
-import com.liu.lutu.domain.po.AiChatSession;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.liu.lutu.domain.po.AiChatSession;
 
 /**
  * <p>

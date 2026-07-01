@@ -6,7 +6,6 @@ import com.liu.lutu.domain.po.Result;
 import com.liu.lutu.domain.po.User;
 import com.liu.lutu.domain.vo.TokenResponse;
 import com.liu.lutu.service.IUserService;
-import com.liu.lutu.util.ThreadlocalUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

@@ -75,9 +75,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { getMyFavorites, toggleFavorite, clonePlan as clonePlanApi } from '@/api/favorite'
+import {onMounted, ref} from 'vue'
+import {useRouter} from 'vue-router'
+import {clonePlan as clonePlanApi, getMyFavorites, toggleFavorite} from '@/api/favorite'
 
 const router = useRouter()
 

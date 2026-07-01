@@ -153,11 +153,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
-import { useRouter } from 'vue-router'
+import {nextTick, onMounted, ref} from 'vue'
+import {useRouter} from 'vue-router'
 
-import { getSessions, createSession, deleteSession, getMessages, chatStream, stopChat } from '@/api/aiChat'
-import { getTravelPlans } from '@/api/travel'
+import {createSession, deleteSession, getMessages, getSessions, stopChat} from '@/api/aiChat'
+import {getTravelPlans} from '@/api/travel'
 
 const router = useRouter()
 const sessions = ref([])
